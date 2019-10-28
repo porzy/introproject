@@ -2,11 +2,11 @@
 
 class EsCharactersController < ApplicationController
   def index
-    @es_characters = Es_character.all
+    @es_characters = EsCharacter.all
   end
 
   def show
-    @es_characters = Es_Character.find_by_id(params[id])
+    @es_characters = EsCharacter.find(params[id])
   end
 
   def about; end

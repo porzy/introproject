@@ -6,6 +6,6 @@ class RacesController < ApplicationController
   end
 
   def show
-    @race = Race.find_by_id(params[id])
+    @race = Race.find(params[id])
   end
 end

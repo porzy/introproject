@@ -8,7 +8,7 @@
 <% @cities.each do |city| %>
   <tr>
     <td><%= city.name%></td>
-    <td><%= city.region_id%></td>
+    <td><%= city.region.name%></td>
 
   </tr>
 <% end %>

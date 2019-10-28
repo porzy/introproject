@@ -5,15 +5,13 @@
     <th>Race</th>
     <th>City</th>
     <th>Class</th>
-    <th>System</th>
   </tr>
 <% @es_characters.each do |character| %>
   <tr>
     <td><%= character.name%></td>
-    <td><%= character.race_id%></td>
-    <td><%= character.city_id%></td>
-    <td><%= character.character_class_id%></td>
-    <td><%= character.system_id%></td>
+    <td><%= character.race.name%></td>
+    <td><%= character.city.name%></td>
+    <td><%= character.character_class.name%></td>
   </tr>
 <% end %>
 </table>

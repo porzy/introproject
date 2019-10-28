@@ -6,6 +6,6 @@ class RegionsController < ApplicationController
   end
 
   def show
-    @region = Region.find_by_id(params[id])
+    @region = Region.find(params[id])
   end
 end
