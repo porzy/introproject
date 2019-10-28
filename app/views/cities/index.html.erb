@@ -7,9 +7,10 @@
   </tr>
 <% @cities.each do |city| %>
   <tr>
-    <td><%= city.name%></td>
-    <td><%= city.region.name%></td>
+        <td><a href="/races/<%= city.id%>"><%=city.name%></a></td>
+    <td><a href="/regions/<%= city.region_id%>"><%= city.region.name%></a></td>
 
   </tr>
 <% end %>
 </table>
+<p><%= link_to 'Home', root_path%></p>

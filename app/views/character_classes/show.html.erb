@@ -1,2 +1,5 @@
-<h1>CharacterClasses#show</h1>
-<p>Find me in app/views/character_classes/show.html.erb</p>
+<h1>Class</h1>
+    <h2>Title: <%= @character_class.name%></h2>
+    <h2>Primary Stat: <%= @character_class.primaryStat%></h2>
+    <p><%= link_to 'Home', root_path%>   |   <%= link_to 'All Classes', character_classes_path%></p>
+

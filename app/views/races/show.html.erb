@@ -1,2 +1,6 @@
-<h1>Races#show</h1>
-<p>Find me in app/views/races/show.html.erb</p>
+
+<h1>Race</h1>
+    <h2>Race: <%= @race.name%></h2>
+    <h2>Home Region: <%= @race.region.name%></h2>
+
+    <p><%= link_to 'Home', root_path%>   |   <%= link_to 'All Races', races_path%></p>

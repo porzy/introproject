@@ -1,2 +1,4 @@
-<h1>Cities#show</h1>
-<p>Find me in app/views/cities/show.html.erb</p>
+<h1>Cities</h1>
+    <h2>City Name: <%= @city.name%></h2>
+    <h2>Region: <%= @city.region.name%></h2>
+<p><%= link_to 'Home', root_path%>   |   <%= link_to 'All Cities', cities_path%></p>

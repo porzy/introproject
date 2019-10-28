@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class RacesController < ApplicationController
+  http_basic_authenticate_with name: 'intro', password: 'password', except: [:index]
   def index
     @races = Race.all
   end

@@ -8,9 +8,11 @@
 <% @races.each do |race| %>
 
   <tr>
-    <td><%= race.name%></td>
-    <td><%= race.region.name%></td>
+    <td><a href="/races/<%= race.id%>"><%=race.name%></a></td>
+    <td><a href="/regions/<%= race.region_id%>"><%= race.region.name%></a></td>
 
   </tr>
 <% end %>
 </table>
+
+<p><%= link_to 'Home', root_path%></p>

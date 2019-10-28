@@ -8,10 +8,10 @@
   </tr>
 <% @es_characters.each do |es_character| %>
   <tr>
-    <td><a href="/characters/<%= es_character.id%>"><%= es_character.name%></td>
-    <td><%= es_character.race.name%></td>
-    <td><%= es_character.city.name%></td>
-    <td><%= es_character.character_class.name%></td>
+    <td><a href="/characters/<%= es_character.id%>"><%= es_character.name%></a></td>
+    <td><a href="/races/<%= es_character.race_id%>"><%= es_character.race.name%></a></td>
+    <td><a href="/cities/<%= es_character.city_id%>"><%= es_character.city.name%></a></td>
+    <td><a href="/character_classes/<%= es_character.character_class_id%>"><%= es_character.character_class.name%></a></td>
   </tr>
 <% end %>
 </table>

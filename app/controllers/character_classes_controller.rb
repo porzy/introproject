@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 class CharacterClassesController < ApplicationController
+  http_basic_authenticate_with name: 'intro', password: 'password', except: [:index]
   def index
-    @character_classes = Character_class.all
+    @character_classes = CharacterClass.all
   end
 
   def show
-    @character_class = Character_class.find_by_id(params[:id])
+    @character_class = CharacterClass.find_by_id(params[:id])
   end
 end
