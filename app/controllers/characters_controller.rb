@@ -8,4 +8,6 @@ class CharactersController < ApplicationController
   def show
     @characters = Character.find_by_id(params[id])
   end
+
+  def about; end
 end

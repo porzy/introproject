@@ -2,10 +2,10 @@
 
 class GameSystemsController < ApplicationController
   def index
-    @game_systems = Game_system.all
+    @game_systems = Game_System.all
   end
 
   def show
-    @Game_system = Game_system.find_by_id(params[id])
+    @Game_system = Game_System.find_by_id(params[id])
   end
 end

@@ -1,4 +1,15 @@
 <h1>Cities</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Region</th>
+
+  </tr>
 <% @cities.each do |city| %>
-<h2><%= city.name %></h2>
+  <tr>
+    <td><%= city.name%></td>
+    <td><%= city.region_id%></td>
+
+  </tr>
 <% end %>
+</table>

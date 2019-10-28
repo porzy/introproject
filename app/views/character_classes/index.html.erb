@@ -1,4 +1,15 @@
 <h1>Classes</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Primary stat</th>
+
+  </tr>
 <% @character_classes.each do |character_class| %>
-<h2><%= character_class.name%></h2>
+  <tr>
+    <td><%= character_class.name%></td>
+    <td><%= character_class.primary_stat%></td>
+
+  </tr>
 <% end %>
+</table>

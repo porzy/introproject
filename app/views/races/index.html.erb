@@ -1,4 +1,16 @@
 <h1>Races</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Region</th>
+
+  </tr>
 <% @races.each do |race| %>
-<h2><%= race.name%></h2>
+
+  <tr>
+    <td><%= race.name%></td>
+    <td><%= race.region_id%></td>
+
+  </tr>
 <% end %>
+</table>

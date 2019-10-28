@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/regions/:id', to: 'regions#show', id: /\d+/
   get '/characters', to: 'characters#index'
   get '/characters/:id', to: 'characters#show', id: /\d+/
+  get '/about', to: 'characters#about'
   root to: 'characters#index'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
