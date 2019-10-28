@@ -1,2 +1,5 @@
-<h1>EsCharacters#show</h1>
-<p>Find me in app/views/es_characters/show.html.erb</p>
+<h1><%= @es_character.name%></h1>
+    <h2>Race: <%= @es_character.race.name%></h2>
+    <h2>Current City: <%= @es_character.city.name%></h2>
+    <h2>Class: <%= @es_character.character_class.name%></h2>
+

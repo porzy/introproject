@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'es_characters/index'
-  get 'es_characters/show'
-  get 'es_characters/about'
   get '/character_classes', to: 'character_classes#index'
   get '/character_classes/:id', to: 'character_classes#show', id: /\d+/
   get '/races', to: 'races#index'

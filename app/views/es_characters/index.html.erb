@@ -6,12 +6,12 @@
     <th>City</th>
     <th>Class</th>
   </tr>
-<% @es_characters.each do |character| %>
+<% @es_characters.each do |es_character| %>
   <tr>
-    <td><%= character.name%></td>
-    <td><%= character.race.name%></td>
-    <td><%= character.city.name%></td>
-    <td><%= character.character_class.name%></td>
+    <td><a href="/characters/<%= es_character.id%>"><%= es_character.name%></td>
+    <td><%= es_character.race.name%></td>
+    <td><%= es_character.city.name%></td>
+    <td><%= es_character.character_class.name%></td>
   </tr>
 <% end %>
 </table>

@@ -6,7 +6,7 @@ class EsCharactersController < ApplicationController
   end
 
   def show
-    @es_characters = EsCharacter.find(params[id])
+    @es_character = EsCharacter.find_by_id(params[:id])
   end
 
   def about; end
