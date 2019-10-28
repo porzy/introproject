@@ -5,5 +5,7 @@ class RegionsController < ApplicationController
     @regions = Region.all
   end
 
-  def show; end
+  def show
+    @region = Region.find_by_id(params[id])
+  end
 end

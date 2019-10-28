@@ -5,5 +5,7 @@ class GameSystemsController < ApplicationController
     @game_systems = Game_system.all
   end
 
-  def show; end
+  def show
+    @Game_system = Game_system.find_by_id(params[id])
+  end
 end

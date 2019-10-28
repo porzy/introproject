@@ -5,5 +5,7 @@ class CharacterClassesController < ApplicationController
     @character_classes = Character_class.all
   end
 
-  def show; end
+  def show
+    @character_class = Character_class.find_by_id(params[id])
+  end
 end
