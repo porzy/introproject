@@ -1,4 +1,9 @@
 <h1>Elder Scrolls Characters</h1>
+<h3>Search Characters</h3>
+<%= form_tag(characters_path, method: :get) do %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag "Search", name: nil %>
+<% end %>
 <table>
   <tr>
     <th>Name</th>
