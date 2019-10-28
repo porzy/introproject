@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_16_001129) do
+ActiveRecord::Schema.define(version: 2019_10_28_065210) do
 
   create_table "character_classes", force: :cascade do |t|
     t.string "name"
@@ -41,6 +41,18 @@ ActiveRecord::Schema.define(version: 2019_10_16_001129) do
     t.index ["region_id"], name: "index_cities_on_region_id"
   end
 
+  create_table "es_characters", force: :cascade do |t|
+    t.string "name"
+    t.integer "race_id", null: false
+    t.integer "city_id", null: false
+    t.integer "character_class_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_class_id"], name: "index_es_characters_on_character_class_id"
+    t.index ["city_id"], name: "index_es_characters_on_city_id"
+    t.index ["race_id"], name: "index_es_characters_on_race_id"
+  end
+
   create_table "game_systems", force: :cascade do |t|
     t.string "name"
     t.string "company"
@@ -68,5 +80,8 @@ ActiveRecord::Schema.define(version: 2019_10_16_001129) do
   add_foreign_key "characters", "races"
   add_foreign_key "characters", "systems"
   add_foreign_key "cities", "regions"
+  add_foreign_key "es_characters", "character_classes"
+  add_foreign_key "es_characters", "cities"
+  add_foreign_key "es_characters", "races"
   add_foreign_key "races", "regions"
 end
