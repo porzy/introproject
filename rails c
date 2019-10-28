@@ -1,0 +1,499 @@
+= ..ggeett
+
+(from gem actionpack-6.0.0)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  BBeehhaavviioorr
+------------------------------------------------------------------------
+  get(action, **args)
+
+------------------------------------------------------------------------
+
+Simulate a GET request with the given parameters.
+
+* action: The controller action to call.
+* params: The hash with HTTP parameters that you want to pass. This may
+  be nil.
+* body: The request body with a string that is appropriately encoded
+  (application/x-www-form-urlencoded or multipart/form-data).
+* session: A hash of parameters to store in the session. This may be
+  nil.
+* flash: A hash of parameters to store in the flash. This may be nil.
+
+You can also simulate POST, PATCH, PUT, DELETE, and HEAD requests with
+post, patch, put, delete, and head. Example sending parameters, session
+and setting a flash message:
+
+  get :show,
+    params: { id: 7 },
+    session: { user_id: 1 },
+    flash: { notice: 'This is flash message' }
+
+Note that the request method is not verified. The different methods are
+available to make the tests more expressive.
+
+
+(from gem actionpack-6.0.0)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  RReeqquueessttHHeellppeerrss
+------------------------------------------------------------------------
+  get(path, **args)
+
+------------------------------------------------------------------------
+
+Performs a GET request with the given parameters. See
+ActionDispatch::Integration::Session#process for more details.
+
+
+(from gem actionpack-6.0.0)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  HHttttppHHeellppeerrss
+------------------------------------------------------------------------
+  get(*args, &block)
+
+------------------------------------------------------------------------
+
+Define a route that only recognizes HTTP GET. For supported arguments,
+see match[rdoc-ref:Base#match]
+
+  get 'bacon', to: 'food#bacon'
+
+
+(from gem activesupport-6.0.0)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  CCllaassssCCaacchhee
+------------------------------------------------------------------------
+  get(key)
+
+------------------------------------------------------------------------
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  SSoouurrcceeLLiisstt
+------------------------------------------------------------------------
+  get(source)
+
+------------------------------------------------------------------------
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  AAccttiioonnss
+------------------------------------------------------------------------
+  get(source, *args) { |render| ... }
+
+------------------------------------------------------------------------
+
+Gets the content at the given address and places it at the given
+relative destination. If a block is given instead of destination, the
+content of the url is yielded and used as location.
+
+==== PPaarraammeetteerrss
+source<String>:
+  the address of the given content.
+
+destination<String>:
+  the relative path to the destination root.
+
+config<Hash>:
+  give :verbose => false to not log the status.
+
+
+==== EExxaammpplleess
+
+  get "http://gist.github.com/103208", "doc/README"
+
+  get "http://gist.github.com/103208" do |content|
+    content.split("\n").first
+  end
+
+
+(from gem concurrent-ruby-1.1.5)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  AAttoommiiccMMaarrkkaabblleeRReeffeerreennccee
+------------------------------------------------------------------------
+  get()
+
+------------------------------------------------------------------------
+
+Gets the current reference and marked values.
+
+@return [Array] the current reference and marked values
+
+
+(from gem concurrent-ruby-1.1.5)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  MMaapp
+------------------------------------------------------------------------
+  get(key)
+
+------------------------------------------------------------------------
+
+(This method is an alias for Concurrent::Map#[].)
+
+Get a value with key @param [Object] key @return [Object] the value
+
+
+(from gem concurrent-ruby-1.1.5)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  MMuutteexxAAttoommiiccRReeffeerreennccee
+------------------------------------------------------------------------
+  get()
+
+------------------------------------------------------------------------
+
+@!macro atomic_reference_method_get
+
+
+(from gem concurrent-ruby-1.1.5)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  XXoorrSShhiiffttRRaannddoomm
+------------------------------------------------------------------------
+  get()
+
+------------------------------------------------------------------------
+
+Generates an initial non-zero positive Fixnum via Kernel.rand.
+
+
+(from gem concurrent-ruby-1.1.5)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  TTuuppllee
+------------------------------------------------------------------------
+  get(i)
+
+------------------------------------------------------------------------
+
+Get the value of the element at the given index.
+
+@param [Integer] i the index from which to retrieve the value @return
+[Object] the value at the given index or nil if the index is out of
+bounds
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  GGeettooppttLLoonngg
+------------------------------------------------------------------------
+  get()
+
+------------------------------------------------------------------------
+
+Get next option name and its argument, as an Array of two elements.
+
+The option name is always converted to the first (preferred) name given
+in the original options to GetoptLong.new.
+
+Example: ['--option', 'value']
+
+Returns nil if the processing is complete (as determined by
+STATUS_TERMINATED).
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  FFTTPP
+------------------------------------------------------------------------
+  get(remotefile, localfile = File.basename(remotefile), blocksize = DEFAULT_BLOCKSIZE) { |data| ... }
+
+------------------------------------------------------------------------
+
+Retrieves remotefile in whatever mode the session is set (text or
+binary).  See #gettextfile and #getbinaryfile.
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  HHTTTTPP
+------------------------------------------------------------------------
+  get(uri_or_host, path = nil, port = nil)
+
+------------------------------------------------------------------------
+
+Sends a GET request to the target and returns the HTTP response as a
+string.  The target can either be specified as (uri), or as (host, path,
+port = 80); so:
+
+  print Net::HTTP.get(URI('http://www.example.com/index.html'))
+
+or:
+
+  print Net::HTTP.get('www.example.com', '/index.html')
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  HHTTTTPP
+------------------------------------------------------------------------
+  get(path, initheader = nil, dest = nil) { |body_segment| ... }
+
+------------------------------------------------------------------------
+
+Retrieves data from path on the connected-to host which may be an
+absolute path String or a URI to extract the path from.
+
+initheader must be a Hash like { 'Accept' => '//', ... }, and it
+defaults to an empty hash. If initheader doesn't have the key
+'accept-encoding', then a value of
+"gzip;q=1.0,deflate;q=0.6,identity;q=0.3" is used, so that gzip
+compression is used in preference to deflate compression, which is used
+in preference to no compression. Ruby doesn't have libraries to support
+the compress (Lempel-Ziv) compression, so that is not supported.  The
+intent of this is to reduce bandwidth by default.   If this routine sets
+up compression, then it does the decompression also, removing the header
+as well to prevent confusion.  Otherwise it leaves the body as it found
+it.
+
+This method returns a Net::HTTPResponse object.
+
+If called with a block, yields each fragment of the entity body in turn
+as a string as it is read from the socket.  Note that in this case, the
+returned response object will nnoott contain a (meaningful) body.
+
+dest argument is obsolete. It still works but you must not use it.
+
+This method never raises an exception.
+
+  response = http.get('/index.html')
+
+  # using block
+  File.open('result.txt', 'w') {|f|
+    http.get('/~foo/') do |str|
+      f.write str
+    end
+  }
+
+
+(from gem nokogiri-1.10.4)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  EEnnttiittyyLLooookkuupp
+------------------------------------------------------------------------
+  get(key)
+
+------------------------------------------------------------------------
+
+Get the HTML::EntityDescription for key
+
+
+(from gem nokogiri-1.10.4)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  NNooddee
+------------------------------------------------------------------------
+  get(attribute)
+
+------------------------------------------------------------------------
+
+Get the value for attribute
+
+
+(from gem rack-2.0.7)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  DDiirreeccttoorryy
+------------------------------------------------------------------------
+  get(env)
+
+------------------------------------------------------------------------
+
+
+(from gem rack-2.0.7)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  FFiillee
+------------------------------------------------------------------------
+  get(env)
+
+------------------------------------------------------------------------
+
+
+(from gem rack-2.0.7)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  HHaannddlleerr
+------------------------------------------------------------------------
+  get(server)
+
+------------------------------------------------------------------------
+
+
+(from gem rack-2.0.7)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  MMoocckkRReeqquueesstt
+------------------------------------------------------------------------
+  get(uri, opts={})
+
+------------------------------------------------------------------------
+
+
+(from gem rack-test-1.1.0)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  SSeessssiioonn
+------------------------------------------------------------------------
+  get(uri, params = {}, env = {}, &block)
+
+------------------------------------------------------------------------
+
+Issue a GET request for the given URI with the given params and Rack
+environment. Stores the issues request object in #last_request and the
+app's response in #last_response. Yield #last_response to a block if
+given.
+
+Example:
+  get "/"
+
+
+(from gem sprockets-3.7.2)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  CCaacchhee
+------------------------------------------------------------------------
+  get(key, local = false)
+
+------------------------------------------------------------------------
+
+Public: Low level API to retrieve item directly from the backend cache
+store.
+
+This API may be used publicly, but may have undefined behavior depending
+on the backend store being used. Prefer the Cache#fetch API over using
+this.
+
+key   - JSON serializable key local - Check local cache first (default:
+false)
+
+Returns a JSON serializable object or nil if there was a cache miss.
+
+
+(from gem sprockets-3.7.2)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  FFiilleeSSttoorree
+------------------------------------------------------------------------
+  get(key)
+
+------------------------------------------------------------------------
+
+Public: Retrieve value from cache.
+
+This API should not be used directly, but via the Cache wrapper API.
+
+key - String cache key.
+
+Returns Object or nil or the value is not set.
+
+
+(from gem sprockets-3.7.2)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  GGeettWWrraappppeerr
+------------------------------------------------------------------------
+  get(key)
+
+------------------------------------------------------------------------
+
+
+(from gem sprockets-3.7.2)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  HHaasshhWWrraappppeerr
+------------------------------------------------------------------------
+  get(key)
+
+------------------------------------------------------------------------
+
+
+(from gem sprockets-3.7.2)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  MMeemmoorryySSttoorree
+------------------------------------------------------------------------
+  get(key)
+
+------------------------------------------------------------------------
+
+Public: Retrieve value from cache.
+
+This API should not be used directly, but via the Cache wrapper API.
+
+key - String cache key.
+
+Returns Object or nil or the value is not set.
+
+
+(from gem sprockets-3.7.2)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  NNuullllSSttoorree
+------------------------------------------------------------------------
+  get(key)
+
+------------------------------------------------------------------------
+
+Public: Simulate a cache miss.
+
+This API should not be used directly, but via the Cache wrapper API.
+
+key - String cache key.
+
+Returns nil.
+
+
+(from gem sprockets-3.7.2)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  RReeaaddWWrriitteeWWrraappppeerr
+------------------------------------------------------------------------
+  get(key)
+
+------------------------------------------------------------------------
+
+
+(from gem tzinfo-1.2.5)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  CCoouunnttrryy
+------------------------------------------------------------------------
+  get(identifier)
+
+------------------------------------------------------------------------
+
+Gets a Country by its ISO 3166-1 alpha-2 code. Raises an 
+InvalidCountryCode exception if it couldn't be found.
+
+
+(from gem tzinfo-1.2.5)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  DDaattaaSSoouurrccee
+------------------------------------------------------------------------
+  get()
+
+------------------------------------------------------------------------
+
+Returns the currently selected DataSource instance.
+
+
+(from gem tzinfo-1.2.5)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  TTiimmeezzoonnee
+------------------------------------------------------------------------
+  get(identifier)
+
+------------------------------------------------------------------------
+
+Returns a timezone by its identifier (e.g. "Europe/London", 
+"America/Chicago" or "UTC").
+
+Raises InvalidTimezoneIdentifier if the timezone couldn't be found.
+
+
+(from gem thor-0.20.3)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  AAccttiioonnss
+------------------------------------------------------------------------
+  get(source, *args) { |render| ... }
+
+------------------------------------------------------------------------
+
+Gets the content at the given address and places it at the given
+relative destination. If a block is given instead of destination, the
+content of the url is yielded and used as location.
+
+get relies on open-uri, so passing application user input would provide
+a command injection attack vector.
+
+==== PPaarraammeetteerrss
+source<String>:
+  the address of the given content.
+
+destination<String>:
+  the relative path to the destination root.
+
+config<Hash>:
+  give :verbose => false to not log the status.
+
+
+==== EExxaammpplleess
+
+  get "http://gist.github.com/103208", "doc/README"
+
+  get "http://gist.github.com/103208" do |content|
+    content.split("\n").first
+  end
+
+
+(from gem thread_safe-0.3.6)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  CCaacchhee
+------------------------------------------------------------------------
+  get(key)
+
+------------------------------------------------------------------------
+
+(This method is an alias for ThreadSafe::Cache#[].)
+
+
+(from gem thread_safe-0.3.6)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  XXoorrSShhiiffttRRaannddoomm
+------------------------------------------------------------------------
+  get()
+
+------------------------------------------------------------------------
+
+Generates an initial non-zero positive Fixnum via Kernel.rand.
+
+

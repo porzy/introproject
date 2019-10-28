@@ -1,7 +1,6 @@
+# frozen_string_literal: true
+
 class Region < ApplicationRecord
-  has_many :characters
   has_one :race
-  has_one :city
-
-
+  has_many :city
 end
